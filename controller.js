@@ -1,5 +1,8 @@
-angular.module('userProfiles').controller('MainController', function($scope){
-    
-    $scope.thisAppIsBroken = "This angular app is working";
-   
+angular.module('userProfiles').controller('MainController', function($scope, mainService){
+
+    $scope.getUsers = mainService.getUsers;
+    $scope.users = $scope.getUsers();
+
+    $scope.toggleFavorite = mainService.toggleFavorite;
+
 })
